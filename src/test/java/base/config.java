@@ -18,7 +18,7 @@ public class config {
             System.out.println("Invalid browser choice");
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         return driver;
     }
 }
