@@ -3,6 +3,7 @@ package stepDef;
 import base.config;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.testng.util.Strings;
 
 public class Hook extends config {
     // Test Data and Environment
@@ -12,6 +13,14 @@ public class Hook extends config {
 
     @Before
     public void startTest(){
+
+        if (Strings.isNullOrEmpty(browserType)){
+            browserType="ch";
+        }
+        if(Strings.isNullOrEmpty(envType)){
+            envType="qa";
+        }
+
         driver = setupBrowser(browserType);
         switch (envType) {
 
